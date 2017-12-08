@@ -1,4 +1,16 @@
 {% extends "base.html" %}
+{% block headmetadata %}
+    <title>{{ album.title }}</title>
+    {% if album.summary %}
+    <meta name="og:description" content="{{ album.summary }}"> 
+    <meta name="description" content="{{ album.summary }}">
+    {% else %}
+    <meta name="description" content="{{ index_title }}"> 
+    {% endif %}
+    {% if album.thumbnail %}
+    <meta name="og:image" content="{{ settings.absolute_url }}/{{ album.path }}/{{ album.thumbnail }}"> 
+    {% endif %}
+{% endblock %}
 {% block content %}
   <header>
     {% if album.breadcrumb %}

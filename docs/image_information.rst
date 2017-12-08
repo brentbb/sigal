@@ -6,7 +6,8 @@ Additional information on an image can be given in a file using the `markdown`_
 syntax, named ``<imagename>.md`` (example: ``IMG_5206.md``)::
 
     Title: My awesome photo
-
+	Description: A longer description or summary
+	
     And a description with *Markdown* syntax.
 
 EXIF data is directly extracted, see :ref:`simple-exif-data`. Some meta-data

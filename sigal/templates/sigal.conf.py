@@ -219,6 +219,20 @@ ignore_files = []
 # The default is 4 columns which gives 220px. 3 columns gives 160px.
 # colorbox_column_size = 4
 
+# Twitter Cards
+# https://dev.twitter.com/cards
+# Set twitter_username to your Twitter handle to enable Twitter Card 
+# metadata to be inserted in Colorbox album and media pages.
+# This value will also be used as the default Website Attribution.
+# You must also enter the absolute_url to your sigal instance without trailing slash
+# in order for Twitter to retrieve your media page.
+# Titles and Descriptions are populated from Markdown files, as described in the "Image information" documentation
+# Twitter handle, starting with '@'
+# twitter_username = '@example'
+# Absolute URL prefix, used for creating absolute links, without the trailing slash
+# absolute_url = "https://www.example.com/gallery"
+
+
 # --------
 # Plugins
 # --------
