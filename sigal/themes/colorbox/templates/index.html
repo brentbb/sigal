@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 {% block headmetadata %}
     <title>{{ album.title }}</title>
-    {% if album.summary %}
-    <meta name="og:description" content="{{ album.summary }}"> 
-    <meta name="description" content="{{ album.summary }}">
-    {% else %}
-    <meta name="description" content="{{ index_title }}"> 
-    {% endif %}
-    {% if album.thumbnail %}
-    <meta name="og:image" content="{{ settings.absolute_url }}/{{ album.path }}/{{ album.thumbnail }}"> 
-    {% endif %}
+	{% if settings.twitter_username %}
+		<meta name="twitter:site" content="{{ settings.twitter_username }}">
+		<meta name="og:title" content="{{ album.title }}">
+		<meta name="twitter:card" content="summary">
+	    <meta name="twitter:creator" content="{{ media_author }}">
+		<meta name="og:url" content="{{ settings.absolute_url }}/{{ album.path }}/">
+		{% if album.summary %}
+		<meta name="og:description" content="{{ album.summary }}"> 
+		<meta name="description" content="{{ album.summary }}">
+		{% else %}
+		<meta name="description" content="{{ index_title }}"> 
+		{% endif %}
+		{% if album.thumbnail %}
+		<meta name="og:image" content="{{ settings.absolute_url }}/{{ album.path }}/{{ album.thumbnail }}"> 
+		{% endif %}
+	{% endif %}
 {% endblock %}
 {% block content %}
   <header>
