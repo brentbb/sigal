@@ -226,6 +226,7 @@ ignore_files = []
 # The default is 4 columns which gives 220px. 3 columns gives 160px.
 # colorbox_column_size = 4
 
+<<<<<<< HEAD
 # Twitter Cards
 # https://dev.twitter.com/cards
 # Set twitter_username to your Twitter handle to enable Twitter Card 
@@ -239,6 +240,14 @@ ignore_files = []
 # Absolute URL prefix, used for creating absolute links, without the trailing slash
 # absolute_url = "https://www.example.com/gallery"
 
+=======
+
+# Site Logo
+# Use a logo file in the side bar
+# You must place the logo file into the theme's static images folder, which can be done using files_to_copy
+# files_to_copy = (('logo.png', 'static/images/logo.png'))
+# site_logo = 'logo.png'
+>>>>>>> colorbox-site-logo
 
 # --------
 # Plugins
