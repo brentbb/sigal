@@ -1,4 +1,34 @@
 {% extends "base.html" %}
+{% block headmetadata %}
+{% if settings.twitter_username %}
+  {% if media %}
+    {% set media_title = media.title if media.title else media.filename %}
+    <title>{{ media_title }}</title>
+    {% set media_author = media.meta['author'][0] if media.meta['author'] else settings.twitter_username %}  
+    {% if media.type == "image" %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ settings.twitter_username }}">
+    <meta name="twitter:creator" content="{{ media_author }}">
+    <meta name="og:url" content="{{ settings.absolute_url }}/{{ media.path }}/{{ media.filename }}.html">
+    <meta name="og:title" content="{{ media_title }}">
+    {% if media.meta['description'] %}
+    <meta name="og:description" content="{{ media.meta['description'][0] }}">    
+    <meta name="description" content="{{ media.meta['description'][0]  }}">
+    {% elif album.summary %}
+    <meta name="og:description" content="{{ album.summary }}"> 
+    <meta name="description" content="{{ album.summary }}">
+    {% else %}
+    <meta name="og:description" content="Photo '{{ media_title }}' from {{ album.title }} presented by {{ settings.author }}">
+    <meta name="description" content="Photo '{{ media_title }}' from {{ album.title }} presented by {{ settings.author }}">
+    {% endif %}
+    <meta name="og:image" content="{{ settings.absolute_url }}/{{ media.path }}/{{ media.filename }}">
+    {% endif %}
+    {% if media.type == "video" %}
+      <meta name="og:type" content="video.other">
+    {% endif %}
+  {% endif %}
+{% endif %}
+{% endblock %}
 {% block content %}
   {% set media_title = media.title if media.title else media.filename %}
   <header>

@@ -34,6 +34,7 @@ from .compat import PY2, text_type
 _DEFAULT_CONFIG = {
     'albums_sort_attr': 'name',
     'albums_sort_reverse': False,
+    'absolute_url': '',
     'autorotate_images': True,
     'colorbox_column_size': 4,
     'copy_exif_data': False,
@@ -64,6 +65,7 @@ _DEFAULT_CONFIG = {
     'piwik': {'tracker_url': '', 'site_id': 0},
     'plugin_paths': [],
     'plugins': [],
+    'site_logo': '',
     'show_map': False,
     'source': '',
     'theme': 'colorbox',
@@ -74,6 +76,7 @@ _DEFAULT_CONFIG = {
     'thumb_size': (200, 150),
     'thumb_suffix': '',
     'thumb_video_delay': '0',
+    'twitter_username': '',
     'title': '',
     'use_assets_cdn': True,
     'use_orig': False,
